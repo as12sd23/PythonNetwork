@@ -1,0 +1,1 @@
+python C:/Users/c404/Desktop/sangjin/Network/file_receiver.py C:\Users\c404\Desktop\sangjin\Network

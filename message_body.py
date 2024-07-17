@@ -29,8 +29,13 @@ class BodyRequest(ISerializable):
         buffer =self.FILENAME.encode(encoding = 'utf-8')
         
         self.struct_fmt = str.format('=Q{0}s', len(buffer))
-        self.struct_len = struct.calcsize(self.struct_fmt)
-        return self.struct_len
+        
+        return struct.pack(
+            self.struct_fmt,
+            *(
+                self.FILESIZE,
+                buffer
+                ))
     
     def GetSize(self):
         buffer = self.FILENAME.encode(encoding='utf-8')

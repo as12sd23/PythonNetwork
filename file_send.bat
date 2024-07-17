@@ -1,0 +1,1 @@
+python C:\Users\c404\Desktop\sangjin\Network\file_sender.py 192.168.0.46 C:\Users\c404\Desktop\sangjin\FaceDetector\sample.mp4

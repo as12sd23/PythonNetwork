@@ -20,11 +20,13 @@ upload_dir = ''
 
 class FileReceiveHandler(socketserver.BaseRequestHandler):
     def handle(self):
-        print("클아이언트 접속 : {0}".format(self.client_address[0]))
+        print("클라이언트 접속 : {0}".format(self.client_address[0]))
         
         client = self.request
-        
-        reqMsg = MessageUtil().receive(client)
+        print('1')
+        reqMsg = MessageUtil.receive(client)
+        print('2')
+        print(client)
         
         if reqMsg.Header.MSGTYPE != message.REQ_FILE_SEND:
             client.close()
@@ -125,14 +127,14 @@ class FileReceiveHandler(socketserver.BaseRequestHandler):
             
             print("파일 전송을 마쳤습니다.")
             client.close()
-    
+
 if __name__ == '__main__':
     '''
     if len(sys.argv) < 2:
         print("사용법 : {0} <Directory>".format(sys.argv[0]))
         sys.exit(0)
-        '''
-    upload_dir = '192.168.0.46'
+      '''  
+    upload_dir = 'C:/Users/c404/Desktop/sangjin/Network'
     if os.path.isdir(upload_dir) == False:
         os.mkdir(upload_dir)
     
